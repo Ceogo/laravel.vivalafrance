@@ -9,7 +9,7 @@ use App\Models\Company;
 class ApiController extends Controller
 {
     public function index(Request $request)
-    {   
+    {
         $query = $request->query('query');
         $productsQuery = Product::query();
 
@@ -29,7 +29,7 @@ class ApiController extends Controller
         foreach ($products as $product) {
             $company = $product->company;
 
-            $data[] = [
+            $data[] = [         
                 'name' => [
                     'en' => $product->name,
                     'fr' => $product->name_fr,
